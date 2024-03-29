@@ -180,6 +180,62 @@ def frappe_import():
         return render_template("import-books.html")
 
 
+@app.route("/github-demo-import", methods=["GET", "POST"])
+@check_auth
+def github_demo_import():
+    if request.method == "POST":
+        api_response = requests.get(
+            "https://github.com/devparanjay/librasic/raw/main/demo-data/frappe_data.json"
+        )
+        api_response_json = api_response.json()
+        books_to_import = api_response_json["message"]
+        print("books_to_import = \n", books_to_import)
+
+        for book in books_to_import:
+            # check if b_id already exists in the database
+            if Book.query.filter_by(b_id=int(book["bookID"])).first():
+                print(f"Book {int(book['bookID'])} already exists in the database.")
+                continue
+            # if isbn ends with X, replace X with 10
+            if book["isbn"].endswith("X"):
+                book["isbn"] = book["isbn"][:-1] + "10"
+            # fallback date format
+            try:
+                b_pub_date = datetime.strptime(
+                    book["publication_date"], "%d/%m/%Y"
+                ).date()
+            except ValueError:
+                b_pub_date = datetime.strptime(
+                    book["publication_date"], "%m/%d/%Y"
+                ).date()
+
+            new_book = Book(
+                b_id=int(book["bookID"]),
+                b_name=book["title"],
+                b_t_stock=10,
+                b_c_stock=10,
+                b_authors=book["authors"],
+                b_lang=book["language_code"],
+                b_publication_date=b_pub_date,
+                b_publisher=book["publisher"],
+                b_isbn=int(book["isbn"]),
+                b_isbn13=int(book["isbn13"]),
+                b_pages=int(book["  num_pages"]),
+                b_rating=float(book["average_rating"]),
+                b_ratings_count=int(book["ratings_count"]),
+                b_text_reviews_count=int(book["text_reviews_count"]),
+            )
+            try:
+                db.session.add(new_book)
+                db.session.commit()
+            except Exception as e:
+                print(f'Error adding book {int(book["bookID"])} to database: ', e)
+                return f'There was an error adding the book {int(book["bookID"])} to the databse. Please check the code.'
+        return redirect("/books")
+    else:
+        return render_template("import-books.html")
+
+
 @app.route("/add-book", methods=["GET", "POST"])
 @check_auth
 def add_book():

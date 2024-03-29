@@ -27,9 +27,26 @@
             </div>
             <div class="mb-3 row">
                 <button type="submit" class="btn btn-primary">Import</button>
+                <span style="text-decoration:wavy; color:crimson; font-weight:bold;">Note: If checking out the demo on
+                    PythonAnywhere, this won't work since Frappe's API is not whitelisted by PythonAnywhere. Use the
+                    import from Github instead, using the button below. It is in the same format as data from
+                    Frappe.
+                </span>
+
             </div>
         </form>
+        <form action="/github-demo-import" method="post">
+            <div class="mb-3 row">
+                <button type="submit" class="btn btn-primary">
+                    Import Demo Data from Github
+                </button>
+            </div>
+        </form>
+        <span style="text-decoration:wavy; color:crimson; font-weight:bold;">Note: The above form will not be used if
+            importing from Github.
+        </span>
     </div>
+</div>
 </div>
 <script>
     document.querySelector('.import_books_form').addEventListener('submit', function (e) {
