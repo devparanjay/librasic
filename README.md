@@ -25,6 +25,21 @@ There might be features that support multiple users with different authority lev
 - **Database Migrations**: Easily manage database schema changes with Flask-Migrate.
 - **Frappe API Import**: Directly import books via the API by Frappe using either/any Title, ISBN, Authors, and Publisher.
 
+## Demo Usage
+
+- Go to the demo deployment -
+https://devparanjay.pythonanywhere.com/
+- Use these credentials when prompted -
+    - Username:
+``
+demo
+``
+    - Password:
+``
+librasic
+``
+- Optionaly import the demo data from Github via the "Import Books" page, since PythonAnywhere does not work Frappe API.
+
 ## Installation
 
 1. Clone the repository:
