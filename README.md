@@ -93,8 +93,8 @@ This project uses Flask for the web framework and SQLAlchemy for the ORM. Migrat
 
 ## Roadmap
 
-- **Delete Functionality**: Implement the delete function for Books and Members.
-*Highest Priority*
+- ~~**Delete Functionality**: Implement the delete function for Books and Members.
+*Highest Priority*~~ ![Completed](https://img.shields.io/date/1711726543.svg?color=%2372dd77&style=flat-square&logo=calendar&label=Completed)
 - **Table Sorting**: Allow sorting tables by ascending or descending table headers in all tables.
 *Highest Priority*
 - **Table Filters**: Implement filters for table headers in all tables.
