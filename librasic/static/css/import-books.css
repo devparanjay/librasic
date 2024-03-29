@@ -1,0 +1,17 @@
+.import_books_form {
+    margin: 2rem !important;
+}
+
+.import_books_form>h1 {
+    margin-bottom: 1rem;
+}
+
+.import_books_form .form-control {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.import_books_form .form-group,
+.import_books_form>h1 {
+    color: var(--pastel-purple) !important;
+}

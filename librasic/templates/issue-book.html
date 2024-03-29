@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block base_head %}
+<title>Issue Book - Librasic</title>
+{% endblock base_head %}
+
+{% block main_body %}
+<div class="container">
+    <form action="/issue-book" method="post">
+        <div class="mb-3 row">
+            <label for="memberId" class="col-4 col-form-label">Member ID</label>
+            <div class="col-8">
+                <input type="text" class="form-control" name="memberId" id="memberId" placeholder="Member ID"
+                    required />
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="bookId" class="col-4 col-form-label">Book ID</label>
+            <div class="col-8">
+                <input type="text" class="form-control" name="bookId" id="bookId" placeholder="Book ID" required />
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="offset-sm-4 col-sm-8">
+                <button type="submit" class="btn btn-primary">
+                    Issue
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock main_body %}

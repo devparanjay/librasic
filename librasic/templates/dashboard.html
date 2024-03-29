@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block base_head %}
+<title>Dashboard - Librasic</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock base_head %}
+
+{% block main_body %}
+
+<div class="main_dashboard">
+    <div class="row mb-3"">
+        <div class=" col-md-4">
+        <a href="/books" class="btn btn-primary">Books</a>
+    </div>
+    <div class="col-md-4">
+        <a href="/members" class="btn btn-primary">Members</a>
+    </div>
+    <div class="col-md-4">
+        <a href="/issue-records" class="btn btn-primary">Issue Records</a>
+    </div>
+</div>
+<div class="spacer-2"></div>
+<div class="row mb-2" style="width: 100%;">
+    <div class="col-md-6">
+        <a name="" id="" class="btn btn-primary" href="/new-issue" role="button">Issue Book</a>
+    </div>
+    <div class="col-md-6">
+        <a name="" id="" class="btn btn-primary" href="/return-issued-book" role="button">Return Book</a>
+    </div>
+</div>
+</div>
+
+{% endblock main_body %}

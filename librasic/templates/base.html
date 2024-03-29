@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/main.css')}}" rel="stylesheet">
+    <script src="../static/js/jquery-3.7.1.min.js"></script>
+    {% block base_head %}{% endblock base_head %}
+</head>
+
+<body>
+    <header>
+        <!-- place navbar here -->
+        {% block base_navbar %}
+        {% include 'navbar.html' %}
+        {% endblock base_navbar %}
+        {% block base_header %}{% endblock base_header %}
+    </header>
+    <main>
+        <div class="container main-div main_container">
+            <div class="row">
+                <div class="col-10" id="main-div-col">
+                    {% block main_body %}{% endblock main_body %}
+                </div>
+
+
+                <!-- Sidebar -->
+                {% block sidebar %}
+                <div class="col-2" id="sidebar">
+
+                    {% include 'sidebar.html' %}
+                </div>
+                {% endblock sidebar %}
+            </div>
+        </div>
+
+        </div>
+    </main>
+    <footer>
+        {% block base_footer %}
+        {% include 'footer.html' %}
+        {% endblock base_footer %}
+    </footer>
+
+    <script src="../static/js/sidebar.js"></script>
+
+    <!-- JavaScript Libraries -->
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/jquery-3.7.1.min.js"></script>
+    <script src="../static/js/feather.min.js"></script>
+    <script>
+        feather.replace()
+
+    </script>
+
+</body>
+
+</html>

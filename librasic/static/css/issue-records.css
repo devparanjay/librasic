@@ -1,0 +1,23 @@
+.main_records {
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: center;
+}
+
+.main_records .table-responsive {
+    width: 100vw;
+    text-align: center;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.main_records table {
+    width: 100%;
+}
+
+.main_records .row {
+    text-align: center !important;
+    margin: 2rem auto;
+    min-height: 5rem !important;
+}

@@ -1,0 +1,16 @@
+.main_books {
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: left;
+}
+
+.main_books .row {
+    text-align: center !important;
+    margin: 1rem auto;
+    min-height: 5rem;
+}
+
+.main_books .table-primary {
+    width: 100%;
+}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block base_head %}
+<title>
+    Import Books - Librasic
+</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/import-books.css')}}">
+{% endblock base_head %}
+
+{% block main_body %}
+
+<div class="row">
+    <div class="col-12">
+        <form action="/frappe-import" method="post" class="import_books_form">
+            <h1>Import Books</h1>
+            <div class="form-group">
+                <label for="book_title">Book Title</label>
+                <input type="text" class="form-control" id="book_title" name="book_title">
+                <label for="book_authors">Book Author(s)</label>
+                <input type="text" class="form-control" id="book_authors" name="book_authors">
+                <label for="book_publisher">Book Publisher</label>
+                <input type="text" class="form-control" id="book_publisher" name="book_publisher">
+                <label for="book_isbn">Book ISBN</label>
+                <input type="text" class="form-control" id="book_isbn" name="book_isbn">
+                <label for="import_pages">Pages to Import</label>
+                <input type="number" class="form-control" id="import_pages" name="import_pages">
+
+            </div>
+            <div class="mb-3 row">
+                <button type="submit" class="btn btn-primary">Import</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    document.querySelector('.import_books_form').addEventListener('submit', function (e) {
+        var inputs = this.querySelectorAll('input[type="text"], input[type="number"]');
+        var isEmpty = Array.from(inputs).every(function (input) {
+            return input.value.trim() === '';
+        });
+
+        if (isEmpty) {
+            e.preventDefault();
+            alert('Please fill in at least one field before submitting.');
+        }
+    });
+</script>
+
+{% endblock main_body %}

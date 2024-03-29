@@ -1,0 +1,212 @@
+:root {
+    /* color pallette */
+    --black-blue: #121824;
+    --white-blue: #e4eff5;
+    --pastel-purple: #b3aae2;
+    --pastel-pale-blue: #7cafd1;
+    --pastel-light-blue-grey: #bfd1e2;
+}
+
+body {
+    background-color: var(--black-blue);
+    width: 100vw;
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
+}
+
+#base_navbar {
+    background-color: var(--pastel-pale-blue) !important;
+}
+
+#base_footer {
+    background-color: var(--pastel-pale-blue) !important;
+    margin-top: -1;
+}
+
+.spacer-2 {
+    height: 2rem;
+    width: 100%;
+    color: transparent;
+    margin: 1rem;
+}
+
+/* .main-div {
+    width: 80%;
+} */
+
+.search-sidebar {
+    position: fixed;
+    top: calc(5% + 1rem);
+    /* Adjust the top position to sit below the navbar */
+    bottom: calc(5% + 1rem);
+    /* Adjust the bottom position to leave space above the footer */
+    right: 0;
+    z-index: 21;
+    display: block;
+    width: 60% !important;
+    height: calc(90% - 2rem);
+    /* Adjust the height to fit between the navbar and footer */
+    max-height: calc(90% - 2rem);
+    /* Adjust the max-height to fit between the navbar and footer */
+    /* background-color: var(--pastel-light-blue-grey) !important; */
+    background-color: var(--white-blue) !important;
+    overflow-y: auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: width 0.5s;
+
+}
+
+/* .search-sidebar-toggle {
+    display: none !important;
+} */
+
+#searchToggle .bi {
+    display: inline-block;
+    height: 0.6rem;
+    width: 0.6rem;
+    color: var(--black-blue);
+}
+
+@media (min-width: 768px) {
+    .search-sidebar {
+        position: fixed;
+        top: calc(5% + 1rem);
+        /* Adjust the top position to sit below the navbar */
+        bottom: calc(5% + 1rem);
+        /* Adjust the bottom position to leave space above the footer */
+        right: 0;
+        z-index: 21;
+        display: block;
+        max-width: 30vw;
+        height: calc(90% - 2rem);
+        /* Adjust the height to fit between the navbar and footer */
+        max-height: calc(90% - 2rem);
+        /* Adjust the max-height to fit between the navbar and footer */
+        background-color: #f8f9fa;
+        overflow-y: auto;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+        transition: width 0.5s;
+
+    }
+
+    #searchToggle {
+        display: none;
+        height: 100%;
+
+    }
+
+    .main-div {
+        width: 100%;
+        float: left;
+    }
+
+    #main-div-col {
+        width: 100%;
+    }
+
+
+
+}
+
+
+.btn-primary {
+    background-color: var(--pastel-pale-blue) !important;
+    font-size: 1.2rem;
+    color: var(--black-blue) !important;
+    border-color: var(--pastel-pale-blue);
+    border-width: 0.2rem;
+    height: auto;
+    text-align: center;
+    font-weight: 600;
+    margin: 0.5rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--pastel-purple) !important;
+    font-size: 1.2rem;
+    font-weight: bold !important;
+    border: .3rem solid var(--pastel-purple);
+    text-anchor: middle;
+}
+
+.btn-primary:focus {
+    background-color: var(--pastel-purple) !important;
+    font-size: 1.2rem;
+    font-weight: bold !important;
+    border: .3rem solid var(--pastel-purple);
+    text-anchor: middle;
+}
+
+.table-responsive {
+    max-height: 74vh;
+    overflow: auto;
+}
+
+.table-primary {
+    text-align: center;
+    padding: 0.2em;
+}
+
+.table-primary thead {
+    position: sticky;
+    top: 0;
+}
+
+.table-primary th {
+    vertical-align: middle;
+    background-color: var(--pastel-purple);
+}
+
+.form-control {
+    background-color: var(--pastel-light-blue-grey);
+}
+
+.github-button-parent {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 0.1em;
+}
+
+
+.github-button {
+    text-align: center;
+    margin-bottom: 0.3em;
+    padding: 0.2em 0.3em;
+    border-radius: 0.5em;
+    color: var(--black-blue);
+    border-color: var(--black-blue);
+    border-style: solid;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+
+}
+
+.github-button:hover {
+    background-color: var(--black-blue);
+    color: var(--white-blue);
+}
+
+.github-link {
+    text-decoration: none;
+    color: var(--black-blue);
+    transition: color 0.3s ease;
+}
+
+.github-button:hover .github-link {
+    color: var(--white-blue);
+}
+
+.github-icon {
+    vertical-align: middle;
+    margin-right: 0.1rem;
+    transition: stroke 0.3s ease;
+}
+
+.github-button:hover .github-icon {
+    fill: var(--white-blue);
+}

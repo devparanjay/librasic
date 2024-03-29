@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block base_head %}
+<title>Members - Librasic</title>
+<link href="{{url_for('static', filename='css/members.css')}}" rel="stylesheet">
+{% endblock base_head %}
+
+{% block main_body %}
+
+<div class="main_members">
+
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">
+            <a href="/add-member" class="btn btn-primary">Add Member</a>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col" style="width: 10%;">Member ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Due Fees</th>
+                    <th scope="col">Total Fees Paid</th>
+                    <th scope="col">Joining Date</th>
+                    <th scope="col" style="width: 30%;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in members %}
+                <tr class="">
+                    <td>{{member.m_id}}</td>
+                    <td>{{member.m_name}}</td>
+                    <td>{{member.m_due_fees}}</td>
+                    <td>{{member.m_total_fees}}</td>
+                    <td>{{member.m_date_added}}</td>
+                    <td><a href="/edit-member/{{member.m_id}}">Edit/Delete Member</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock main_body %}

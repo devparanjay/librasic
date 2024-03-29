@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Issue Records - Librasic</title>
+<link href="{{url_for('static', filename='css/issue-records.css')}}" rel="stylesheet">
+
+{% endblock head %}
+
+{% block main_body %}
+<div class="row main_records">
+    <div class="row justify-content-center align-items-center g-2" style="text-align: center; min-height:5rem;">
+        <div class="col">
+            <a name="" id="" class="btn btn-primary" href="/new-issue" role="button">Issue Book</a>
+        </div>
+        <div class="col">
+            <a name="" id="" class="btn btn-primary" href="/return-issued-book" role="button">Return Book</a>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Record ID</th>
+                    <th scope="col">Member ID</th>
+                    <th scope="col">Book ID</th>
+                    <th scope="col">Issue Date</th>
+                    <th scope="col">Return Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for issue in issue_record %}
+                <tr class="">
+                    <td>{{issue.r_id}}</td>
+                    <td>{{issue.m_id}}</td>
+                    <td>{{issue.b_id}}</td>
+                    <td>{{issue.r_i_date}}</td>
+                    <td>{{issue.r_r_date}}</td>
+                    <td>
+                        <a href="/return-book/{{issue.r_id}}">Return Book</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock main_body %}

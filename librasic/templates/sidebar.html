@@ -1,0 +1,42 @@
+<div class="search-sidebar">
+    <h3>Search the Library</h3>
+    <form action="/search-database" id="searchDbForm" method="post" class="row g-3">
+        <div class="col-12">
+            <span>Choose to search:</span>
+        </div>
+        <div class="col-6">
+            <input type="radio" id="book" name="search_type" value="Books" class="form-check-input">
+            <label for="book" class="form-check-label">Books</label>
+        </div>
+        <div class="col-6">
+            <input type="radio" id="member" name="search_type" value="Members" class="form-check-input">
+            <label for="member" class="form-check-label">Members</label>
+        </div>
+        <div class="col-6">
+            <input type="radio" id="issue_records" name="search_type" value="IssueRecords" class="form-check-input">
+            <label for="issue_records" class="form-check-label">Issue Records</label>
+        </div>
+        <div class="col-12">
+            <label for="search_query" class="form-label">Query:</label>
+            <input type="text" name="search_query" id="search_query" class="form-control">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+    <div id="search_results" class="search-results">
+        <i>Try searching to see some results.</i>
+    </div>
+</div>
+<!-- Bootstrap JS -->
+<script src="../static/js/search_sidebar.js"></script>
+<script>
+    // Custom JS here
+    document.getElementById('searchDbForm').addEventListener('submit', function (event) {
+        var searchType = document.querySelector('input[name="search_type"]:checked');
+        if (!searchType) {
+            alert('Please select either "Books" or "Members" before searching.');
+            event.preventDefault();
+        }
+    });
+</script>

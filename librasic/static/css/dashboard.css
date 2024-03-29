@@ -1,0 +1,11 @@
+.main_dashboard {
+    width: 100%;
+    height: 80%;
+    padding: 5%;
+    text-align: center;
+}
+
+.main_dashboard .row {
+    margin: 2rem auto;
+    min-height: 5rem;
+}

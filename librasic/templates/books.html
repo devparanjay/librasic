@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block base_head %}
+<title>Books - Librasic</title>
+<link href="{{url_for('static', filename='css/books.css')}}" rel="stylesheet">
+
+{% endblock base_head %}
+
+{% block main_body %}
+
+<div class="row main_books">
+    <div class="row justify-content-center align-items-center g-2">
+        <div class="col">
+            <a href="/add-new-book" class="btn btn-primary">Add Book</a>
+        </div>
+        <div class="col">
+            <a href="/new-issue" class="btn btn-primary">Issue Book</a>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-primary" id="primary-table">
+            <thead>
+                <tr>
+                    <th scope="col" style="width: 5%;">Book ID</th>
+                    <th scope="col" style="width: 25%;">Name</th>
+                    <th scope="col" style="width: 15%;">Authors</th>
+                    <th scope="col" style="width: 4%;">Stock</th>
+                    <th scope="col" style="width: 10%;">ISBN</th>
+                    <th scope="col" style="width: 8%;">Date Added</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col" style="width: 8%;">Published On</th>
+                    <th scope="col" style="width: 15%;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr class="">
+                    <td>{{book.b_id}}</td>
+                    <td>{{book.b_name}}</td>
+                    <td>{{book.b_authors}}</td>
+                    <td>{{book.b_c_stock}}</td>
+                    <td>{{book.b_isbn}}</td>
+                    <td>{{book.b_date_added}}</td>
+                    <td>{{book.b_publisher}}</td>
+                    <td>{{book.b_publication_date}}</td>
+                    <td><a href="/edit-book/{{book.b_id}}">Edit/Delete Book</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock main_body %}

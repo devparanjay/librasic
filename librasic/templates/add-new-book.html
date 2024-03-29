@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block base_head %}
+<title>Add Book - Librasic</title>
+<link href="{{url_for('static', filename='css/add-new-book.css')}}" rel="stylesheet">
+
+{% endblock base_head %}
+
+{% block main_body %}
+
+<div class="container-fluid main_container">
+    <div class="container">
+        <form action="/add-book" method="post" class="new_book_form">
+            <div class="mb-3 row">
+                <label for="book_name" class="col-4 col-form-label">Name/Title of the Book</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="book_name" id="book_name" placeholder="Book Title"
+                        required aria-required="true" />
+                </div>
+                <label for="book_id" class="col-4 col-form-label">Book ID</label>
+                <div class="col-8">
+                    <input type="number" class="form-control" name="book_id" id="book_id" placeholder="Book ID" required
+                        aria-required="true" />
+                </div>
+                <label for="book_stock" class="col-4 col-form-label">Total Book Stock</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="book_total_stock" id="book_total_stock"
+                        placeholder="Book Total Stock" required aria-required="true" />
+                </div>
+                <label for="book_stock" class="col-4 col-form-label">Current Book Stock</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="book_current_stock" id="book_current_stock"
+                        placeholder="Book Current Stock" />
+                </div>
+
+                <label for="book_pub_name" class="col-4 col-form-label">Book Publisher</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="book_pub_name" id="book_pub_name"
+                        placeholder="Book Publisher" />
+                </div>
+                <label for="book_isbn" class="col-4 col-form-label">Book ISBN</label>
+                <div class="col-8">
+                    <input type="number" class="form-control" name="book_isbn" id="book_isbn" placeholder="Book ISBN"
+                        required aria-required="true" />
+                </div>
+                <label for="book_isbn13" class="col-4 col-form-label">Book ISBN13</label>
+                <div class="col-8">
+                    <input type="number" class="form-control" name="book_isbn13" id="book_isbn13"
+                        placeholder="Book ISBN13" />
+                </div>
+
+                <label for="book_authors" class="col-4 col-form-label">Book Authors</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="book_authors" id="book_authors"
+                        placeholder="Book Authors" required aria-required="true" />
+                </div>
+                <label for="book_language" class="col-4 col-form-label">Book Language</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="book_language" id="book_language"
+                        placeholder="Book Language" required aria-required="true" />
+                </div>
+                <label for="book_pub_date" class="col-4 col-form-label">Book Publication Date</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="book_pub_date" id="book_pub_date"
+                        placeholder="Book Publication Date" />
+                </div>
+
+                <label for="book_pages" class="col-4 col-form-label">Total Pages</label>
+                <div class="col-8">
+                    <input type="number" class="form-control" name="book_pages" id="book_pages"
+                        placeholder="Total Pages in Books" />
+                </div>
+                <label for="book_rating" class="col-4 col-form-label">Book Rating</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" name="book_rating" id="book_rating"
+                        placeholder="Book Rating" />
+                </div>
+                <label for="book_ratings_count" class="col-4 col-form-label">Number of Ratings</label>
+                <div class="col-8">
+                    <input type="number" class="form-control" name="book_ratings_count" id="book_ratings_count"
+                        placeholder="Number of Ratings" />
+                </div>
+
+                <label for="book_text_reviews_count" class="col-4 col-form-label">Number of Text Reviews</label>
+                <div class="col-8">
+                    <input type="number" class="form-control" name="book_text_reviews_count"
+                        id="book_text_reviews_count" placeholder="Number of Text Reviews" />
+                </div>
+            </div>
+            <div class="mb-3 row" style="margin-top: 0rem;">
+                <div class="offset-sm-4 col-sm-8">
+                    <button type="submit" class="btn btn-primary">
+                        Add Book
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock main_body %}

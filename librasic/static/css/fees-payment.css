@@ -1,0 +1,16 @@
+.fees_payment_form {
+    margin: 2rem !important;
+}
+
+.fees_payment_form .row {
+    margin-bottom: 0;
+}
+
+.fees_payment_form .row .col-8 {
+    padding-bottom: 1rem;
+}
+
+.fees_payment_form .col-form-label {
+    color: var(--pastel-purple) !important;
+
+}

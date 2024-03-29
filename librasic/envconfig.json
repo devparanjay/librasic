@@ -1,0 +1,6 @@
+{
+    "LIBRARIAN_USERNAME": "uu",
+    "LIBRARIAN_PASSWORD": "pp",
+    "DEFAULT_RENT_FEE": 20,
+    "DEFAULT_LATE_FEE": 50
+}
