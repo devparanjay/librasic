@@ -92,7 +92,7 @@ def issue_book_record(m_id: int, b_id: int):
             book = Book.query.get(b_id)
             book.b_c_stock -= 1
             # print(member.m_books_issued)
-            if b_id in member.m_books_issued:
+            if member.m_books_issued and b_id in member.m_books_issued:
                 updated_books = member.m_books_issued[b_id] + 1
             else:
                 updated_books = 1
