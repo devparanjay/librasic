@@ -399,13 +399,18 @@ def pay_fees():
     payment_amount: float = float(request.form["paymentAmount"])
     member = Member.query.get_or_404(m_id, description="Member not found!")
     total_due_fees: float = member.m_due_fees
+
+    if payment_amount > total_due_fees:
+        return make_response(
+            400, {"message": "Payment amount cannot be greater than due fees."}
+        )
+
     due_fees: float = total_due_fees - payment_amount
     member.m_due_fees = due_fees
     member.m_total_fees += payment_amount
     db.session.commit()
-    return redirect("/members") and make_response(
-        200, {"message": "Fees paid successfully."}
-    )
+
+    return redirect("/members")
 
 
 @app.route("/search-database", methods=["POST"])
