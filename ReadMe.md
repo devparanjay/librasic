@@ -109,4 +109,4 @@ Please create a detailed issue first and proceed with the PR if and once assigne
 
 ## License
 
-This project is licensed under the terms of the GNU AFFERO GENERAL PUBLIC LICENSE. See the LICENSE file for details.
+This project is licensed under the terms of the MIT license. See the LICENSE file for details.
