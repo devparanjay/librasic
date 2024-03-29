@@ -5,11 +5,14 @@
 
 Librasic is a Python-based library management system built with Flask and SQLAlchemy. It provides a simple and efficient way to manage books, members, and transactions in a library.
 
+Librasic is meant to be used by the librarian and currently supports only one user.
+There might be features that support multiple users with different authority levels and such in future.
 <!-- todo -->
 <!-- Librasic Screenshots -->
 
 ## Features
 
+- **Simple Authentication**: Simple basic authentication for the Librarian to use the application.
 - **Manage Books**: Add, edit, and delete books. Each book has attributes like name, authors, language, publication date, publisher, ISBN, pages, rating, and more.
 - **Manage Members**: Add, edit, and delete members.
 - **Issue and Return Books**: Keep track of books issued and returned by members. (Issue Records / Transactions)
@@ -53,6 +56,16 @@ pip install -r requirements.txt
 
 ## Usage
 
+1. Configure the variables in the librasic/librasic/envconfig.json file:
+```json
+{
+    "LIBRARIAN_USERNAME": "uu",
+    "LIBRARIAN_PASSWORD": "pp",
+    "DEFAULT_RENT_FEE": 20,
+    "DEFAULT_LATE_FEE": 50
+}
+```
+
 To run the application, execute the following command in the project directory:
 ```sh
 python run.py
@@ -72,6 +85,13 @@ This project uses Flask for the web framework and SQLAlchemy for the ORM. Migrat
 *High Priority*
 - **Mobile Responsiveness**: While the webapp works just fine on smaller devices, some things are visually broken here and there that need to be fixed.
 *High Priority*
+- **Better Security**: Implement better security for storing sensitive data that does not expose credentials in a simple JSON config file.
+*Medium Priority*
+- **Better Database**: Librasic currently uses Python's SQLite3 for its database, but it's not an idea solution. Move to PostgreSQL.
+*Low Priority*
+- **Better Authentication**:
+Implement better authentication if it exists. Better = equaly simple but provides more security.
+*Low Priority*
 - **Fee Payment Records**: Implement storing and display of fee payment records.
 *Low Priority*
 - **Statistics and Reports**: Generate statistics and reports on book circulation, popular genres, and member activity.
