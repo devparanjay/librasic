@@ -113,6 +113,45 @@ Implement better authentication if it exists. Better = equaly simple but provide
 - **Statistics and Reports**: Generate statistics and reports on book circulation, popular genres, and member activity.
 *Lowest Priority*
 
+## Screenshots
+
+- **Dashboard**:
+  ![devparanjay pythonanywhere com dashboard](https://github.com/devparanjay/librasic/assets/45117614/298ae262-38e6-4411-9a27-c134c00164d6)
+
+- **Books**:
+  ![devparanjay pythonanywhere com books](https://github.com/devparanjay/librasic/assets/45117614/d0810439-acd5-4334-9c83-8f48987efcc5)
+
+- **Members**:
+  ![devparanjay pythonanywhere com members](https://github.com/devparanjay/librasic/assets/45117614/332def78-f80c-420e-95c3-6c76eb0d7eb7)
+
+- **Issue Records**:
+  ![devparanjay pythonanywhere com issue-records](https://github.com/devparanjay/librasic/assets/45117614/b01de211-29b7-4f77-8612-82e030fab317)
+
+- **Import Books**:
+  ![devparanjay pythonanywhere com import-books](https://github.com/devparanjay/librasic/assets/45117614/937bdc6d-ca9d-4c6f-958e-a6727bf88504)
+
+- **Fees Payment**:
+  ![devparanjay pythonanywhere com fees-payment](https://github.com/devparanjay/librasic/assets/45117614/c370da8e-9c73-4fae-b14d-1e3b162b755c)
+
+- **Search**:
+  ![devparanjay pythonanywhere com search](https://github.com/devparanjay/librasic/assets/45117614/6d604f53-a3f4-4e18-a372-b610c2fd5c9a)
+
+- **Add Book**:
+  ![devparanjay pythonanywhere com add-book](https://github.com/devparanjay/librasic/assets/45117614/50256b7b-bf34-4f6f-902b-454d3f1f65f7)
+
+- **Edit Book**:
+  ![devparanjay pythonanywhere com edit-book](https://github.com/devparanjay/librasic/assets/45117614/510b574c-bd5f-4e96-8015-aa387a58c89e)
+
+- **Add Member**:
+  ![devparanjay pythonanywhere com add-member](https://github.com/devparanjay/librasic/assets/45117614/9fb86813-d312-4ff0-bdf7-c4af9e2e8593)
+
+- **Issue Book**:
+  ![devparanjay pythonanywhere com new-issue](https://github.com/devparanjay/librasic/assets/45117614/bc976f4d-5698-4ae5-afd6-779a6034408b)
+
+- **Return Book**:
+  ![devparanjay pythonanywhere com return-issued-book](https://github.com/devparanjay/librasic/assets/45117614/68f2690a-a00b-4132-9562-ee31f2e589a2)
+
+
 ## Feedback, Bugs, and Issues
 
 Something not working right? Something could be done better? Something that should be there but isn't?
