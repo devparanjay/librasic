@@ -4,7 +4,6 @@
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/-Flask-000000?style=flat-square&logo=flask&logoColor=white) ![SQLAlchemy](https://img.shields.io/badge/-SQLAlchemy-FCA121?style=flat-square&logo=sqlalchemy&logoColor=white) ![SQLite](https://img.shields.io/badge/-SQLite-07405E?style=flat-square&logo=sqlite&logoColor=white) ![Bootstrap 5](https://img.shields.io/badge/-Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white) ![Jinja](https://img.shields.io/badge/-Jinja-B41717?style=flat-square&logo=jinja&logoColor=white) ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
-
 Librasic is a Python-based library management system built with Flask and SQLAlchemy. It provides a simple and efficient way to manage books, members, and transactions in a library.
 
 Librasic is meant to be used by the librarian and currently supports only one user.
@@ -25,6 +24,21 @@ There might be features that support multiple users with different authority lev
 - **Easy Search**: Easily search for books and members by Name, ID, or other attributes through the sidebar.
 - **Database Migrations**: Easily manage database schema changes with Flask-Migrate.
 - **Frappe API Import**: Directly import books via the API by Frappe using either/any Title, ISBN, Authors, and Publisher.
+
+## Demo Usage
+
+- Go to the demo deployment -
+https://devparanjay.pythonanywhere.com/
+- Use these credentials when prompted -
+    - Username:
+``
+demo
+``
+    - Password:
+``
+librasic
+``
+- Optionaly import the demo data from Github via the "Import Books" page, since PythonAnywhere does not work Frappe API.
 
 ## Installation
 
