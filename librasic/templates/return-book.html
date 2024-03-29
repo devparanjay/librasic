@@ -11,7 +11,7 @@
 
 <div class="container-fluid">
     <div class="container">
-        <form action="/return-book/0" method="post" class="new_issue_form">
+        <form method="post" class="new_issue_form" id="returnBookForm">
             <div class="mb-3 row">
                 <label for="issue_record_id" class="col-4 col-form-label">Issue Record ID</label>
                 <div class="col-8">
@@ -29,6 +29,11 @@
     </div>
 
 </div>
-
+<script>
+    document.getElementById('returnBookForm').addEventListener('submit', function (e) {
+        var issueRecordId = document.getElementById('issue_record_id').value;
+        this.action = '/return-book/' + issueRecordId;
+    });
+</script>
 
 {% endblock main_body %}

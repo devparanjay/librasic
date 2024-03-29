@@ -286,6 +286,19 @@ def add_book():
         return render_template("add-new-book.html")
 
 
+@app.route("/delete-book/<int:b_id>", methods=["GET", "POST"])
+@check_auth
+def delete_book(b_id):
+    book = Book.query.get_or_404(b_id, description="Book not found!")
+    try:
+        db.session.delete(book)
+        db.session.commit()
+        return redirect("/books")
+    except Exception as e:
+        print("Error deleting the book: ", e)
+        return "There was an error deleting the book. Please check the code."
+
+
 @app.route("/add-member", methods=["GET", "POST"])
 @check_auth
 def add_member():
@@ -304,6 +317,18 @@ def add_member():
 
     else:
         return render_template("add-new-member.html")
+
+
+@app.route("/delete-member/<int:m_id>", methods=["GET", "POST"])
+@check_auth
+def delete_member(m_id):
+    member = Member.query.get_or_404(m_id, description="Member not found!")
+    try:
+        db.session.delete(member)
+        db.session.commit()
+        return redirect("/members")
+    except Exception as e:
+        return print("Error deleting the member: ", e)
 
 
 @app.route("/update-book/<int:b_id>", methods=["GET", "POST"])
