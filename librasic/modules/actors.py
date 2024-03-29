@@ -16,55 +16,8 @@ from librasic.imports.imports import (
 # actor functions
 
 
-def issue_book_record_og(m_id: int, b_id: int):
-    member = Member.query.get_or_404(m_id, description="Member not found!")
-    issue_date = datetime.date(datetime.utcnow())
-
-    # checking book stock
-    inStock: bool = check_book(b_id, "book_stock")
-    member_fees_due: float = check_member(m_id, "fees_due")
-
-    if inStock and member_fees_due <= 500:
-        # last_issue: IssueRecord = IssueRecord.query.first()
-        last_issue: IssueRecord = IssueRecord.query.order_by(
-            IssueRecord.r_i_date.desc()
-        ).first()
-        o_r_id = db.session.query(IssueRecord).order_by(IssueRecord.r_id).first()
-        print("o_r_id = ", o_r_id)
-        n_r_id = int(last_issue.r_id) + 1 if last_issue else 1
-        new_issue_record = IssueRecord(
-            r_id=n_r_id, r_i_date=issue_date, b_id=b_id, m_id=m_id
-        )
-
-        # member.m_books_issued = all_books_issued.append(b_id)
-        try:
-            db.session.add(new_issue_record)
-            book = Book.query.get(b_id)
-            book.b_c_stock -= 1
-
-            if member.m_books_issued is not None:
-                dict(member.m_books_issued).update(b_id)
-                # member.m_books_issued = list(all_books_issued).update(b_id)
-            else:
-                member.m_books_issued = {b_id}
-            print("member.m_books_issued 3 = \n", member.m_books_issued)
-
-            db.session.commit()
-        except Exception as e:
-            print("Error while adding issue to database: ", e)
-            return "There was an error adding this issue record to the database. Please check the code."
-
-    elif member_fees_due > 500:
-        return "Member's due fees exceed INR 500/-. Another book cannot be issued until dues are paid."
-    else:
-        return f"Book {check_book(b_id, 'book_name')} is currently not in stock."
-
-
 def get_random_four_digit():
     return str(random.randint(1000, 9999)).zfill(3)
-
-
-# actor functions
 
 
 def issue_book_record(m_id: int, b_id: int):

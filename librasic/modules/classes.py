@@ -1,6 +1,6 @@
 from datetime import datetime
-from librasic.imports.imports import db, ScalarListType, Column, Integer, String, JSON
 
+from librasic.imports.imports import JSON, Column, db
 
 # classes
 
@@ -24,7 +24,7 @@ class Book(db.Model):
     b_date_added = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self) -> str:
-        return '<Book %r>' % self.b_id
+        return "<Book %r>" % self.b_id
 
 
 class Member(db.Model):
@@ -32,13 +32,13 @@ class Member(db.Model):
     m_name = db.Column(db.String, nullable=False)
     # m_books_issued = db.Column(db.String)
     # m_books_issued = db.Column(ScalarListType())
-    m_books_issued = Column(JSON)
+    m_books_issued = Column(JSON, default={}, nullable=False)
     m_date_added = db.Column(db.DateTime, default=datetime.utcnow)
     m_due_fees = db.Column(db.Float, default=0)
     m_total_fees = db.Column(db.Float, default=0)
 
     def __repr__(self) -> str:
-        return '<Member %r>' % self.m_id
+        return "<Member %r>" % self.m_id
 
 
 class IssueRecord(db.Model):
@@ -49,7 +49,7 @@ class IssueRecord(db.Model):
     m_id = db.Column(db.Integer, db.ForeignKey(Member.m_id), nullable=False)
 
     def __repr__(self) -> str:
-        return '<Issue Record %r>' % self.r_id
+        return "<Issue Record %r>" % self.r_id
 
 
 class Fees(db.Model):
@@ -60,4 +60,4 @@ class Fees(db.Model):
     f_notes = db.Column(db.String)
 
     def __repr__(self) -> str:
-        return '<Fee Record %r>' % self.f_id
+        return "<Fee Record %r>" % self.f_id
